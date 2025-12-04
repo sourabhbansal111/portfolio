@@ -4,26 +4,26 @@ import './Projects.css';
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with user authentication, payment integration, and admin dashboard.',
-      tech: ['React', 'Node.js', 'MongoDB'],
-      image: '/profile.jpg',
-      link: '#',
-      github: '#'
+      title: 'Pet Adoption Site',
+      description: 'A full-stack pet adoption platform built with Django, featuring user authentication, pet listings, and adoption management system.',
+      tech: ['Django', 'SQLite'],
+      image: '/petadop.png',
+      link: 'https://sourabhbansal.pythonanywhere.com/',
+      github: 'https://github.com/sourabhbansal111/pet-adoption-site'
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
-      tech: ['React', 'Firebase', 'Material-UI'],
-      image: '/profile.jpg',
-      link: '#',
-      github: '#'
+      title: 'Flappy Bird Game',
+      description: 'A fun and interactive Flappy Bird game clone , featuring smooth animations and responsive gameplay.',
+      tech: ['HTML',  'CSS' , 'JavaScript'],
+      image: '/flapybird.png',
+      link: 'https://github.com/sourabhbansal111/flappy-bird.git',
+      github: 'https://github.com/sourabhbansal111/flappy-bird.git'
     },
     {
       title: 'Weather Dashboard',
       description: 'A beautiful weather application with location-based forecasts and interactive charts.',
       tech: ['React', 'API Integration', 'Chart.js'],
-      image: '/profile.jpg',
+      image: '/',
       link: '#',
       github: '#'
     },
@@ -45,11 +45,6 @@ const Projects = () => {
                     e.target.src = 'https://via.placeholder.com/400x250?text=Project+Preview';
                   }}
                 />
-                <div className="project-overlay">
-                  <a href={project.link} className="overlay-link" target="_blank" rel="noopener noreferrer">
-                    View Project
-                  </a>
-                </div>
               </div>
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
@@ -70,6 +65,17 @@ const Projects = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="view-all-container">
+          <a 
+            href="https://github.com/sourabhbansal111?tab=repositories" 
+            className="view-all-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="view-all-text">View All Projects</span>
+            <span className="view-all-arrow">→</span>
+          </a>
         </div>
       </div>
     </section>

@@ -42,10 +42,6 @@ const Contact = () => {
       return;
     }
 
-    // Google Sheets Web App URL
-    // TODO: Replace with your Google Apps Script Web App URL after setup
-    const googleSheetsUrl = 'https://script.google.com/macros/s/AKfycbz195IpBJZa1EBnG4PvRGc-QUGhOclMr-ZfGxK0-N1IM4GySGjN-1QxDbB2Td29K7HcMg/exec'; // e.g., 'https://script.google.com/macros/s/.../exec'
-
     try {
       // Send email using EmailJS
       await emailjs.send(serviceId, templateId, {
@@ -54,39 +50,6 @@ const Contact = () => {
         message: formData.message,
         to_email: 'sourabhbansalhello@gmail.com',
       }, publicKey);
-
-      // Save to Google Sheets if configured
-      if (googleSheetsUrl !== 'YOUR_GOOGLE_SCRIPT_URL') {
-        try {
-          // Use URL-encoded format for Google Apps Script
-          const params = new URLSearchParams();
-          params.append('name', formData.name);
-          params.append('email', formData.email);
-          params.append('message', formData.message);
-          params.append('timestamp', new Date().toISOString());
-
-          // Send to Google Sheets using GET method (more reliable for Google Apps Script)
-          // Append data as query parameters
-          const urlWithParams = `${googleSheetsUrl}?${params.toString()}`;
-          
-          // Use image-based approach to avoid CORS and tracking prevention issues
-          // This is more reliable than fetch for Google Apps Script
-          const img = new Image();
-          img.src = urlWithParams;
-          img.style.display = 'none';
-          document.body.appendChild(img);
-          
-          // Clean up after a delay
-          setTimeout(() => {
-            document.body.removeChild(img);
-          }, 1000);
-
-          console.log('Data sent to Google Sheets successfully');
-        } catch (sheetsError) {
-          console.error('Google Sheets save error:', sheetsError);
-          // Don't fail the form if Sheets save fails
-        }
-      }
       
       setSubmitStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' });
       setFormData({ name: '', email: '', message: '' });

@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo" onClick={() => scrollToSection('intro')}>
-          Portfolio
+          Sourabh
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li><a href="#intro" onClick={(e) => { e.preventDefault(); scrollToSection('intro'); }}>Home</a></li>
