@@ -29,6 +29,10 @@
   color: var(--accent);
   cursor: pointer;
   transition: var(--transition);
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
 }
 
 .nav-logo:hover {
@@ -116,7 +120,27 @@
   border-radius: 2px;
 }
 
+/* Tablet and smaller laptops */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-menu {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile and tablet */
 @media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-logo {
+    font-size: 1.3rem;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -141,6 +165,165 @@
 
   .nav-menu li {
     margin: 1rem 0;
+  }
+}
+
+/* Medium mobile devices (425px) */
+@media (max-width: 425px) {
+  .nav-container {
+    padding: 0.8rem 1rem;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .theme-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  .nav-menu {
+    top: 65px;
+    padding: 1.5rem 0;
+  }
+
+  .nav-menu li {
+    margin: 0.8rem 0;
+  }
+
+  .nav-menu li a {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small mobile devices (375px) */
+@media (max-width: 375px) {
+  .nav-container {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+
+  .theme-toggle {
+    width: 34px;
+    height: 34px;
+    padding: 0.4rem;
+  }
+
+  .theme-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hamburger {
+    gap: 3px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2.5px;
+  }
+
+  .nav-menu {
+    top: 60px;
+    padding: 1.2rem 0;
+  }
+
+  .nav-menu li {
+    margin: 0.7rem 0;
+  }
+
+  .nav-menu li a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small mobile devices (320px) */
+@media (max-width: 320px) {
+  .nav-container {
+    padding: 0.6rem 0.7rem;
+  }
+
+  .nav-logo {
+    font-size: 1rem;
+  }
+
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+    padding: 0.35rem;
+  }
+
+  .theme-toggle svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .hamburger {
+    gap: 3px;
+  }
+
+  .hamburger span {
+    width: 18px;
+    height: 2px;
+  }
+
+  .nav-menu {
+    top: 55px;
+    padding: 1rem 0;
+  }
+
+  .nav-menu li {
+    margin: 0.6rem 0;
+  }
+
+  .nav-menu li a {
+    font-size: 0.85rem;
+  }
+}
+
+/* Large laptops and desktops */
+@media (min-width: 1440px) {
+  .nav-container {
+    max-width: 1400px;
+    padding: 1.2rem 2.5rem;
+  }
+
+  .nav-logo {
+    font-size: 1.6rem;
+  }
+
+  .nav-menu {
+    gap: 2.5rem;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1920px) {
+  .nav-container {
+    max-width: 1600px;
+    padding: 1.3rem 3rem;
+  }
+
+  .nav-logo {
+    font-size: 1.7rem;
+  }
+
+  .nav-menu {
+    gap: 3rem;
   }
 }
 

@@ -16,14 +16,14 @@ const Projects = () => {
       description: 'A fun and interactive Flappy Bird game clone , featuring smooth animations and responsive gameplay.',
       tech: ['HTML',  'CSS' , 'JavaScript'],
       image: '/flapybird.png',
-      link: 'https://github.com/sourabhbansal111/flappy-bird.git',
+      link: 'https://flapybirdgame.netlify.app/',
       github: 'https://github.com/sourabhbansal111/flappy-bird.git'
     },
     {
       title: 'Weather Dashboard',
       description: 'A beautiful weather application with location-based forecasts and interactive charts.',
       tech: ['React', 'API Integration', 'Chart.js'],
-      image: '/',
+      image: '/logo512.png',
       link: '#',
       github: '#'
     },
@@ -41,6 +41,10 @@ const Projects = () => {
                   src={project.image} 
                   alt={project.title}
                   className="project-image"
+                  width="400"
+                  height="250"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/400x250?text=Project+Preview';
                   }}

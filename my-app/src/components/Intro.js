@@ -23,10 +23,13 @@ const Intro = () => {
             <div className="image-wrapper">
               <img 
                 src="/profile.jpg" 
-                alt="Profile" 
+                alt="Sourabh Bansal" 
                 className="profile-image"
+                width="400"
+                height="400"
+                decoding="async"
+                loading="eager"
               />
-              <div className="image-border"></div>
             </div>
           </div>
         </div>

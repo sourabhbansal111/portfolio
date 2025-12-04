@@ -24,11 +24,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="nav-container">
-        <div className="nav-logo" onClick={() => scrollToSection('intro')}>
+        <button type="button" className="nav-logo" aria-label="Go to home" onClick={() => scrollToSection('intro')}>
           Sourabh
-        </div>
+        </button>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li><a href="#intro" onClick={(e) => { e.preventDefault(); scrollToSection('intro'); }}>Home</a></li>
           <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
@@ -50,7 +50,23 @@ const Navbar = () => {
               </svg>
             )}
           </button>
-          <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div 
+            className="hamburger" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            role="button" 
+            aria-label="Toggle menu" 
+            aria-expanded={isMenuOpen}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setIsMenuOpen(!isMenuOpen);
+              }
+              if (e.key === 'Escape') {
+                setIsMenuOpen(false);
+              }
+            }}
+          >
             <span></span>
             <span></span>
             <span></span>

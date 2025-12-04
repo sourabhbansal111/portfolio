@@ -13,6 +13,7 @@ section {
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
+  scroll-margin-top: 80px;
 }
 
 .section-title {
@@ -34,7 +35,7 @@ section {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  background: var(--brand-gradient);
   border-radius: 2px;
 }
 

@@ -1,5 +1,5 @@
 .about-section {
-  background-color: var(--bg-secondary);
+  background: var(--section-gradient);
 }
 
 .about-container {

@@ -6,6 +6,7 @@
 
 :root {
   --transition: all 0.3s ease;
+  color-scheme: light dark;
 }
 
 [data-theme="light"] {
@@ -20,6 +21,8 @@
   --border: #dee2e6;
   --shadow: rgba(0, 0, 0, 0.1);
   --shadow-hover: rgba(0, 0, 0, 0.15);
+  --brand-gradient: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  --section-gradient: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
 }
 
 [data-theme="dark"] {
@@ -34,6 +37,8 @@
   --border: #333333;
   --shadow: rgba(0, 0, 0, 0.3);
   --shadow-hover: rgba(0, 0, 0, 0.5);
+  --brand-gradient: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  --section-gradient: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
 }
 
 body {

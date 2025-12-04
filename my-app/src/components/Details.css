@@ -1,5 +1,5 @@
 .details-section {
-  background-color: var(--bg-secondary);
+  background: var(--section-gradient);
 }
 
 .details-container {

@@ -23,15 +23,13 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // EmailJS Configuration
-    // TODO: Replace these with your EmailJS credentials
-    // Get them from: https://dashboard.emailjs.com/admin
-    const serviceId = 'service_hee3spg'; // e.g., 'service_xxxxxxx'
-    const templateId = 'template_tr0q5fc'; // e.g., 'template_xxxxxxx'
-    const publicKey = 'FoZj_O3wiKiZ5aRP0'; // e.g., 'xxxxxxxxxxxxx'
+    // EmailJS configuration via environment variables
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || '';
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || '';
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || '';
 
     // Check if EmailJS is configured
-    if (serviceId === 'YOUR_SERVICE_ID' || templateId === 'YOUR_TEMPLATE_ID' || publicKey === 'YOUR_PUBLIC_KEY') {
+    if (!serviceId || !templateId || !publicKey) {
       // Fallback to mailto if EmailJS not configured
       const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
       const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
@@ -101,7 +99,7 @@ const Contact = () => {
                   aria-label={social.name}
                 >
                   <span className="social-icon">
-                    <img src={social.icon} alt={social.name} />
+                    <img src={social.icon} alt={social.name} width="24" height="24" loading="lazy" decoding="async" />
                   </span>
                   <span className="social-name">{social.name}</span>
                 </a>
